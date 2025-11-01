@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Main() {
 
-    const [memeInfo, setMemeInfo] = React.useState({
+    const [meme, setMeme] = React.useState({
         topText: "One does not simply",
         bottomText: "Walk into Mordor",
         imageUrl: "http://i.imgflip.com/1bij.jpg"
@@ -29,9 +29,9 @@ export default function Main() {
                 <button>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
-                <img src={memeInfo.imageUrl} />
-                <span className="top">{memeInfo.topText}</span>
-                <span className="bottom">{memeInfo.bottomText}</span>
+                <img src={meme.imageUrl} />
+                <span className="top">{meme.topText}</span>
+                <span className="bottom">{meme.bottomText}</span>
             </div>
         </main>
     )
