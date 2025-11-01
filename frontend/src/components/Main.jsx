@@ -20,8 +20,8 @@ export default function Main() {
     React.useEffect(() => {
         fetch("http://i.imgflip.com/")
             .then(res => res.json())
-            //.then(data => meme(data))
-    }, [meme])
+            .then(data => meme(data))
+    }, [])
 
     return(
         <main>
