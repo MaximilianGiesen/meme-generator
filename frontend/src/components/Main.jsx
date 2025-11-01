@@ -1,4 +1,13 @@
+import React from "react"
+
 export default function Main() {
+
+    const [memeInfo, setMemeInfo] = React.useState({
+        topText: "One does not simply",
+        bottomText: "Walk into Mordor",
+        imageUrl: "http://i.imgflip.com/1bij.jpg"
+    })
+
     return(
         <main>
             <div className="form">
@@ -20,9 +29,9 @@ export default function Main() {
                 <button>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
-                <img src="http://i.imgflip.com/1bij.jpg" />
-                <span className="top">One does not simply</span>
-                <span className="bottom">Walk into Mordor</span>
+                <img src={memeInfo.imageUrl} />
+                <span className="top">{memeInfo.topText}</span>
+                <span className="bottom">{memeInfo.bottomText}</span>
             </div>
         </main>
     )
