@@ -8,18 +8,13 @@ export default function Main() {
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
 
-    function handleTopChange(e) {
-        setMeme({
-            ...meme,
-            topText: e.target.value
-        })
-    }
+    function handleChange(e) {
+        const {value, name} = e.currentTarget
 
-    function handleBottomChange(e) {
-        setMeme({
-            ...meme,
-            bottomText: e.target.value
-        })
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            [name]: value
+        }))
     }
 
     return(
@@ -31,7 +26,7 @@ export default function Main() {
                         placeholder="One does not simply"
                         name="topText"
                         value={meme.topText}
-                        onChange={handleTopChange}
+                        onChange={handleChange}
                     />
                 </label>
 
@@ -41,7 +36,7 @@ export default function Main() {
                         placeholder="Walk into Mordor"
                         name="bottomText"
                         value={meme.bottomText}
-                        onChange={handleBottomChange}
+                        onChange={handleChange}
                     />
                 </label>
                 <button>Get a new meme image 🖼</button>
