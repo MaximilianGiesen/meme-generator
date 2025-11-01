@@ -30,6 +30,7 @@ export default function Main() {
                         type="text"
                         placeholder="One does not simply"
                         name="topText"
+                        value={meme.topText}
                         onChange={handleTopChange}
                     />
                 </label>
@@ -39,6 +40,7 @@ export default function Main() {
                         type="text"
                         placeholder="Walk into Mordor"
                         name="bottomText"
+                        value={meme.bottomText}
                         onChange={handleBottomChange}
                     />
                 </label>
