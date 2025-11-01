@@ -8,6 +8,8 @@ export default function Main() {
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
 
+    const [memesArr, setMemesArr] = React.useState([])
+
     function handleChange(e) {
         const {value, name} = e.currentTarget
 
@@ -18,9 +20,9 @@ export default function Main() {
     }
 
     React.useEffect(() => {
-        fetch("http://i.imgflip.com/")
+        fetch("https://api.imgflip.com/get_memes")
             .then(res => res.json())
-            .then(data => setMeme(data))
+            .then(data => setMemesArr(data.data.memes))
     }, [])
 
     return(
