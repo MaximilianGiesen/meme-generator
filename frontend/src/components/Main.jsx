@@ -8,6 +8,20 @@ export default function Main() {
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
 
+    function handleTopChange(e) {
+        setMeme({
+            ...meme,
+            topText: e.target.value
+        })
+    }
+
+    function handleBottomChange(e) {
+        setMeme({
+            ...meme,
+            bottomText: e.target.value
+        })
+    }
+
     return(
         <main>
             <div className="form">
@@ -16,6 +30,7 @@ export default function Main() {
                         type="text"
                         placeholder="One does not simply"
                         name="topText"
+                        onChange={handleTopChange}
                     />
                 </label>
 
@@ -24,12 +39,13 @@ export default function Main() {
                         type="text"
                         placeholder="Walk into Mordor"
                         name="bottomText"
+                        onChange={handleBottomChange}
                     />
                 </label>
                 <button>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
-                <img src={meme.imageUrl} />
+                <img src={meme.imageUrl}  alt="meme"/>
                 <span className="top">{meme.topText}</span>
                 <span className="bottom">{meme.bottomText}</span>
             </div>
