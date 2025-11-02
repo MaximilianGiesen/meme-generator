@@ -26,6 +26,10 @@ export default function Main() {
             .then(data => setMemesArr(data.data.memes))
     }, [])
 
+    const fetchImage = () => {
+        console.log("fetched Image!")
+    }
+
     return(
         <main>
             <div className="form">
@@ -48,7 +52,7 @@ export default function Main() {
                         onChange={handleChange}
                     />
                 </label>
-                <button>Get a new meme image 🖼</button>
+                <button onClick={fetchImage}>Get a new meme image 🖼</button>
             </div>
             <div className="meme">
                 <img src={meme.imageUrl}  alt="meme"/>
