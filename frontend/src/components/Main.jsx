@@ -20,6 +20,7 @@ export default function Main() {
     }
 
     React.useEffect(() => {
+        console.log("Api fetch successful")
         fetch("https://api.imgflip.com/get_memes")
             .then(res => res.json())
             .then(data => setMemesArr(data.data.memes))
