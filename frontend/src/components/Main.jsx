@@ -24,10 +24,18 @@ export default function Main() {
         fetch("https://api.imgflip.com/get_memes")
             .then(res => res.json())
             .then(data => setMemesArr(data.data.memes))
-    }, [])
+    }, []);
 
     const fetchImage = () => {
-        console.log("fetched Image!")
+        if (memesArr.length > 0) {
+            const randomIndex = Math.floor(Math.random() * memesArr.length);
+            setMeme(prevMeme => ({
+                ...prevMeme,
+                imageUrl: memesArr[randomIndex].url,
+            }))
+        } else {
+            console.log("No more Memes to fetch.")
+        }
     }
 
     return(
